@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  // mode: 'production',
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
@@ -58,7 +59,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              publicPath: '/'
+              publicPath: '/',
+              name: '[path][name].[ext]'
             }
           }
         ],

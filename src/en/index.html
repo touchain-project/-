@@ -19,9 +19,10 @@
             <a href="../en/about/" class="mx-4 text-sm opacity-50">About Us</a>
             <!-- <a href="" class="mx-4 text-sm opacity-50">Help Center</a> -->
           </div>
-          <div class="ml-8">
-            <a href="../" class="text-sm opacity-50">
-              <span>🌎</span><span class="ml-2">English</span>
+          <div class="ml-8 flex items-end">
+            <a href="../" class="text-sm flex items-center">
+              <img src="../assets/images/language.png" alt="" style="height: 16px;">
+              <span class="ml-2" style="color: #5B6182">English</span>
             </a>
           </div>
         </div>
@@ -337,6 +338,9 @@
                 </table>
               </div>
               <div style="margin-top: 89px; padding-bottom: 23px">
+                <button id="bt-more">
+                  <img src="../assets/images/home/more.png" alt="">
+                </button>
                 <!-- <button
                   style="
                     width: 180px;
@@ -353,7 +357,7 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="device-specifications absolute hidden">
         <div class="container mx-auto flex">
           <div
             class="flex justify-center"
@@ -622,6 +626,11 @@
             </div>
           </div>
         </div>
+        <div class="container mx-auto flex justify-center" style="padding-bottom: 36px;">
+          <button id="bt-close">
+            <img src="../assets/images/home/close.png" alt="">
+          </button>
+        </div>
       </div>
       <div style="background-color: #f2f3f5">
         <div class="container mx-auto flex justify-center" style="padding-top: 64px;">
@@ -646,37 +655,37 @@
             <div>
               <ul class="text-xs leading-6">
                 <li
-                  class="cursor-pointer"
-                  style="margin-bottom: 10px"
-                  onclick="selectAppFunc('store')"
+                  class="cursor-pointer func"
+                  style="margin-bottom: 10px; color: #2948FF;"
+                  onclick="selectAppFunc(event, 'store')"
                 >
                   Support multiple storage
                 </li>
                 <li
-                  class="cursor-pointer"
+                  class="cursor-pointer func opacity-50"
                   style="margin-bottom: 10px"
-                  onclick="selectAppFunc('wallet')"
+                  onclick="selectAppFunc(event, 'wallet')"
                 >
                   Support multi-chain wallet
                 </li>
                 <li
-                  class="cursor-pointer"
+                  class="cursor-pointer func opacity-50"
                   style="margin-bottom: 10px"
-                  onclick="selectAppFunc('email')"
+                  onclick="selectAppFunc(event, 'email')"
                 >
                   Mobile phone number or email registration
                 </li>
                 <li
-                  class="cursor-pointer"
+                  class="cursor-pointer func opacity-50"
                   style="margin-bottom: 10px"
-                  onclick="selectAppFunc('tid')"
+                  onclick="selectAppFunc(event, 'tid')"
                 >
                   Decentralized identity
                 </li>
                 <li
-                  class="cursor-pointer"
+                  class="cursor-pointer func opacity-50"
                   style="margin-bottom: 10px"
-                  onclick="selectAppFunc('dapp')"
+                  onclick="selectAppFunc(event, 'dapp')"
                 >
                   Support Dapp application
                 </li>
@@ -783,32 +792,38 @@
         </div>
         <div class="container mx-auto flex justify-center">
           <div class="flex justify-between" style="width: 287px">
-            <div>
-              <img src="../assets/images/home/wechat.png" alt="" />
+            <div style="position: relative;">
+              <div class="wechat-qrcode hidden" style="position: absolute; left: -38px; top: -120px; width: 100px; height: 100px; background-color: #2C2C2C;">
+                <img class="wechat-qrcode" src="../assets/images/wechat-qrcode.png" alt="" style="margin: 5px 0 0 5px;">
+                <span class="org_bot_cor"></span>
+              </div>
+              <a href="https://mp.weixin.qq.com/s?__biz=MzI2OTY1NjczOA==&mid=2247483736&idx=1&sn=8f8998bb165e86b3e7daf8f8a5abbfa3">
+                <img class="footer wechat" src="../assets/images/home/wechat.png" alt="" />
+              </a>
             </div>
             <div>
               <a href="https://author.baidu.com/home?app_id=1680133714007171">
-                <img src="../assets/images/home/baijia.png" alt="" />
+                <img class="footer" src="../assets/images/home/baijia.png" alt="" />
               </a>
             </div>
             <div>
               <a href="https://weibo.com/u/7508926022">
-                <img src="../assets/images/home/weibo.png" alt="" />
+                <img class="footer" src="../assets/images/home/weibo.png" alt="" />
               </a>
             </div>
             <div>
               <a href="https://twitter.com/ChainTou">
-                <img src="../assets/images/home/twitter.png" alt="" />
+                <img class="footer" src="../assets/images/home/twitter.png" alt="" />
               </a>
             </div>
             <div>
               <a href="https://touchain.medium.com">
-                <img src="../assets/images/home/medium.png" alt="" />
+                <img class="footer" src="../assets/images/home/medium.png" alt="" />
               </a>
             </div>
             <div>
               <a href="https://t.me/touchainio">
-                <img src="../assets/images/home/telegram.png" alt="" />
+                <img class="footer" src="../assets/images/home/telegram.png" alt="" />
               </a>
             </div>
           </div>

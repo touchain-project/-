@@ -8,6 +8,8 @@
 
 @import "swiper/swiper-bundle";
 
+@import "bootstrap/dist/css/bootstrap.min.css";
+
 @media screen and (min-width: 640px) {
   .video-swiper {
     width: 380px;
@@ -21,4 +23,59 @@
   .video-swiper {
     width: 600px;
   }
+}
+
+li.cursor-pointer.func.selected {
+  position: relative;
+}
+
+li.cursor-pointer.func.selected::before {
+  position: absolute;
+  width: 3px;
+  height: 10px;
+  left: -11px;
+  top: 6.5px;
+  background-color: #2948FF;
+  content: '';
+}
+
+.swiper-button-prev {
+  width: 46px;
+  height: 46px;
+  background-image: url("./assets/images/left.png") !important;
+}
+
+.swiper-button-prev::after {
+  content: none;
+}
+
+.swiper-button-next {
+  width: 46px;
+  height: 46px;
+  background-image: url("./assets/images/right.png") !important;
+}
+
+.swiper-button-next::after {
+  content: none;
+}
+
+.org_bot_cor{
+  z-index: -1;
+  width:0;
+  height:0;
+  font-size:0;
+  border-width:10px;
+  border-style:solid;
+  border-color:#2C2C2C transparent transparent;
+  _border-color:#2C2C2C white white;
+  overflow:hidden;
+  position:absolute;
+  left:40px;
+  bottom:-20px;
+}
+
+.collapsed{
+  transform:rotate(180deg);
+  -webkit-transform:rotate(180deg);
+  -webkit-transtion:all .3s linear;
 }

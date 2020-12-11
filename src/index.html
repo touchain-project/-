@@ -19,15 +19,16 @@
             <a href="./about/" class="mx-4 text-sm opacity-50">关于我们</a>
             <!-- <a href="" class="mx-4 text-sm opacity-50">帮助中心</a> -->
           </div>
-          <div class="ml-8">
-            <a href="./en/" class="text-sm opacity-50">
-              <span>🌎</span><span class="ml-2">中文</span>
+          <div class="ml-8 flex items-end">
+            <a href="./en/" class="text-sm flex items-center">
+              <img src="./assets/images/language.png" alt="" style="height: 16px;">
+              <span class="ml-2" style="color: #5B6182;">中文</span>
             </a>
           </div>
         </div>
       </div>
     </nav>
-    <main class="rel">
+    <main>
       <canvas id="home-banner" class="absolute"></canvas>
       <div class="container mx-auto relative z-0">
         <div style="padding-top: 331px; padding-bottom: 270px">
@@ -188,6 +189,7 @@
                         class="card-img-top img-fluid"
                         src="./assets/images/home/swiper-1.png"
                       />
+                      <!-- <img class="absolute" src="./assets/images/home/play.png" alt="" style="top: 232px; left: 261px"> -->
                     </a>
                   </div>
                   <div class="swiper-slide">
@@ -201,6 +203,7 @@
                         class="card-img-top img-fluid"
                         src="./assets/images/home/swiper-2.png"
                       />
+                      <!-- <img class="absolute" src="./assets/images/home/play.png" alt="" style="top: 232px; left: 261px"> -->
                     </a>
                   </div>
                   <div class="swiper-slide">
@@ -208,12 +211,13 @@
                       data-fancybox
                       data-width="640"
                       data-height="360"
-                      href="./assets/videos/语音交互（合）.mp4"
+                      href="./assets/videos/语音交互.mp4"
                     >
                       <img
                         class="card-img-top img-fluid"
                         src="./assets/images/home/swiper-3.png"
                       />
+                      <!-- <img class="absolute" src="./assets/images/home/play.png" alt="" style="top: 232px; left: 261px"> -->
                     </a>
                   </div>
                 </div>
@@ -223,14 +227,6 @@
                 <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-                <!-- <div class="flex">
-                  <div class="swiper-button-left absolute" style="top: 50%; z-index: 10;">
-                    <img src="./assets/images/left.png" alt="">
-                  </div>
-                  <div class="swiper-button-right absolute" style="top: 50%; z-index: 10; left: auto;">
-                    <img src="./assets/images/right.png" alt="">
-                  </div>
-                </div> -->
               </div>
             </div>
           </div>
@@ -319,6 +315,9 @@
                 </table>
               </div>
               <div style="margin-top: 89px; padding-bottom: 23px">
+                <button id="bt-more">
+                  <img src="./assets/images/home/more.png" alt="">
+                </button>
                 <!-- <button
                   style="
                     width: 180px;
@@ -335,7 +334,7 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="device-specifications absolute hidden">
         <div class="container mx-auto flex">
           <div
             class="flex justify-center"
@@ -354,7 +353,7 @@
           <div style="width: 480px">
             <div
               class="flex items-center"
-              style="width: 400px; padding-top: 80px; padding-bottom: 98px"
+              style="width: 400px; padding-top: 80px; padding-bottom: 18px"
             >
               <table>
                 <thead>
@@ -577,6 +576,11 @@
             </div>
           </div>
         </div>
+        <div class="container mx-auto flex justify-center" style="padding-bottom: 36px;">
+          <button id="bt-close">
+            <img src="./assets/images/home/close.png" alt="">
+          </button>
+        </div>
       </div>
       <div style="background-color: #f2f3f5">
         <div class="container mx-auto flex justify-center" style="padding-top: 64px;">
@@ -595,8 +599,8 @@
               基于去中心化身份认证DID的数据资产管理平台，实现一站式自主管理自己的数字资产/身份信息/实体资产，让用户的数据成为能自主掌控的有价资产。
             </div>
             <div>
-              <ul class="text-xs leading-6">
-                <li class="cursor-pointer func" style="margin-bottom: 10px; color: #2948FF;" onclick="selectAppFunc(event, 'store')">支持多种存储</li>
+              <ul class="text-xs leading-6 select-app-func">
+                <li class="cursor-pointer func selected" style="margin-bottom: 10px; color: #2948FF;" onclick="selectAppFunc(event, 'store')">支持多种存储</li>
                 <li class="cursor-pointer func opacity-50" style="margin-bottom: 10px" onclick="selectAppFunc(event, 'wallet')">支持多链钱包</li>
                 <li class="cursor-pointer func opacity-50" style="margin-bottom: 10px" onclick="selectAppFunc(event, 'email')">支持手机邮箱转账</li>
                 <li class="cursor-pointer func opacity-50" style="margin-bottom: 10px" onclick="selectAppFunc(event, 'tid')">去中心化身份</li>
@@ -702,32 +706,38 @@
         </div>
         <div class="container mx-auto flex justify-center">
           <div class="flex justify-between" style="width: 287px">
-            <div>
-              <img src="./assets/images/home/wechat.png" alt="" />
+            <div style="position: relative;">
+              <div class="wechat-qrcode hidden" style="position: absolute; left: -38px; top: -120px; width: 100px; height: 100px; background-color: #2C2C2C;">
+                <img class="wechat-qrcode" src="./assets/images/wechat-qrcode.png" alt="" style="margin: 5px 0 0 5px;">
+                <span class="org_bot_cor"></span>
+              </div>
+              <a href="https://mp.weixin.qq.com/s?__biz=MzI2OTY1NjczOA==&mid=2247483736&idx=1&sn=8f8998bb165e86b3e7daf8f8a5abbfa3">
+                <img class="footer wechat" src="./assets/images/home/wechat.png" alt="" />
+              </a>
             </div>
             <div>
               <a href="https://author.baidu.com/home?app_id=1680133714007171">
-                <img src="./assets/images/home/baijia.png" alt="" />
+                <img class="footer" src="./assets/images/home/baijia.png" alt="" />
               </a>
             </div>
             <div>
               <a href="https://weibo.com/u/7508926022">
-                <img src="./assets/images/home/weibo.png" alt="" />
+                <img class="footer" src="./assets/images/home/weibo.png" alt="" />
               </a>
             </div>
             <div>
               <a href="https://twitter.com/ChainTou">
-                <img src="./assets/images/home/twitter.png" alt="" />
+                <img class="footer" src="./assets/images/home/twitter.png" alt="" />
               </a>
             </div>
             <div>
               <a href="https://touchain.medium.com">
-                <img src="./assets/images/home/medium.png" alt="" />
+                <img class="footer" src="./assets/images/home/medium.png" alt="" />
               </a>
             </div>
             <div>
               <a href="https://t.me/touchainio">
-                <img src="./assets/images/home/telegram.png" alt="" />
+                <img class="footer" src="./assets/images/home/telegram.png" alt="" />
               </a>
             </div>
           </div>
