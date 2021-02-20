@@ -35,6 +35,10 @@ module.exports = {
       template: "./src/en/about/index.html",
       filename: "./en/about/index.html",
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/download/index.html",
+      filename: "./download/index.html",
+    }),
   ],
   module: {
     rules: [
